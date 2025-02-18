@@ -14,7 +14,11 @@ public class Reservation {
     private final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy");
 
 
-    public Reservation(Integer roomNumber, Date checkIn, Date checkOut) {
+    public Reservation(Integer roomNumber, Date checkIn, Date checkOut) throws DateException {
+
+        if (!checkOut.before(checkIn)){
+            throw new DateException("CheckOut before CheckIn");
+        }
         this.roomNumber = roomNumber;
         this.checkIn = checkIn;
         this.checkOut = checkOut;

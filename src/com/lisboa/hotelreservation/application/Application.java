@@ -46,6 +46,9 @@ public class Application {
                     } catch (ParseException e) {
                         System.out.println("invalid data format");
                     }
+                    catch (DateException e){
+                        System.out.println("Error: " + e.getMessage());
+                    }
 
                     break;
                 case 2:
